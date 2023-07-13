@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Mytha Shabira Front End</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content-slide">
+                <div class="imgslide fade">
+                    <div class="numberslide">1 / 3</div>
+                    <img src="assets/image/bg.jpg" alt="">
+                    <div class="text">THIS IS A PLACE WHERE TECHNOLOGY & CREATIVITY FUSED INTO DIGITAL CHEMISTRY</div>
+                </div>
+    
+                <div class="imgslide fade">
+                    <div class="numberslide">2 / 3</div>
+                    <img src="assets/image/about-bg.jpg" alt="">
+                    <div class="text">WE DON'T HAVE THE BEST BUT WE HAVE THE GREATEST TEAM</div>
+                </div>
+    
+                <a class="prev" onClick="nextslide(-1)">&#10094;</a>
+                <a class="next" onClick="nextslide(1)">&#10095;</a> 
+            </div>
+    
+            <div class="page">
+                <span class="dot" onClick="dotslide(1)"></span>
+                <span class="dot" onClick="dotslide(2)"></span>
+            </div>
+    
+        </div>
+    
+        <script>
+            var slideIndex = 1;
+                showSlide(slideIndex);
+    
+            function nextslide(n){
+                showSlide(slideIndex += n);
+            }
+    
+    
+            function showSlide(n) {
+                var i;
+                var slides = document.getElementsByClassName("imgslide");
+                var dot = document.getElementsByClassName("dot");
+                
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+                for (i = 0; i < slides.length; i++) {
+                    
+                    slides[i].style.display = "none";
+                }
+    
+                for (i = 0; i < slides.length; i++) {
+                    
+                    dot[i].className = dot[i].className.replace(" active", "");
+                }
+    
+                slides[slideIndex - 1].style.display = "block";
+    
+                dot[slideIndex - 1].className += " active";
+                
+    
+    
+            }
+            
+        </script>
+    
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav__logo">Company</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#about" class="nav__link active-link">About</a>
+                            <ul class="sub_nav">
+                                <li><a href="#History" class="nav__link">History</a></li>
+                                <li><a href="#Vision Mission" class="nav__link">Vision</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Our Work</a></li>
+                        <li class="nav__item"><a href="#Team" class="nav__link"> Our Team</a></li>
+                        <li class="nav__item"><a href="#contact " class="nav__link">Contact us</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--========== ABOUT ==========-->
+            <section class="about section bd-container" id="about">
+                <h2 class="section-title">OUR VALUE</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__data">
+                        <img src="assets/images/lightbulb-o.png" alt="" width="20" height="20" class="about__img">
+                        <h3 class="about__name">INNOVATIVE </h3>
+                        <span class="about__detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem dolorem deserunt,unde,eaque ipsa?</span>
+                    </div>
+                    <div class="about__data">
+                        <img src="assets/images/bank.png" alt="" class="about__img">
+                        <h3 class="about__name">LOYALTY </h3>
+                        <span class="about__detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit similique eum Itaque facere temporibus dolores</span>
+                    </div>
+                    <div class="about__data">
+                        <img src="assets/images/balance-scale.png" alt="" class="about__img">
+                        <h3 class="about__name">RESPECT </h3>
+                        <span class="about__detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Consequatur, sit? Tenetur et neque quad inciduntl</span>
+                    </div>
+
+                </div>
+            </section>
+             <!--========== History  ==========-->
+             <section class="History section bd-container" id="History"></section>
+
+            <!--========== Vision  ==========-->
+            <section class="Vision Mission section bd-container" id="Vision"></section>
+
+
+            <!--========== CONTACT US ==========-->
+            <section class="contact section bd-container" id="contact">
+                <div class="contact__container bd-grid">
+                    <div class="contact__data">
+                        <h2 class="section-title contact__initial">Contact us</h2>
+                    </div>
+                    <div class="center">
+                        <div class="contact__container">
+                        <div class="email_custom field">
+                            <dl class="form full">
+                                <dd><input name="full name" placeholder="Full Name" type="text"/></dd>
+                            </dl>
+                            <dl class="form full">
+                                <dd><input name="email" placeholder="Email" type="email" required/></dd>
+
+                            </dl>
+                        <dl class="form full">
+                            <dd><input name="message" placeholder="Message" type="text"/></dd>
+                        </dl>
+                        </div>
+                        <div class="form-controls">
+                            <button class="button slate kirimemail-btn-submit">Kirim</button>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+        
+                </div>
+            </section>
+        </main>
+
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="assets/js/main.js"></script>
+
+        <!--======= JQUERY======-->
+        <script type="assets/jquery-3.6.0.min.js"></script>
+
+    </body>
+</html>
